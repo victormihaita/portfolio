@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { GradientOrbs } from "@/components/animations/GradientOrbs";
+import { Background } from "@/components/layout/Background";
 import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
 
 const inter = Inter({
@@ -44,8 +44,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="min-h-screen flex flex-col">
-        <GradientOrbs />
+      <body className="min-h-screen flex flex-col bg-black dark:bg-black">
+        <Background />
         <Header />
         <main className="flex-1 relative">{children}</main>
         <Footer />
