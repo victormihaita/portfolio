@@ -62,5 +62,5 @@ export const SKILLS = {
   backend: ["Go", "GraphQL", "REST APIs", "Node.js"],
   database: ["PostgreSQL", "Neon", "SQLite", "Core Data"],
   cloud: ["Google Cloud Platform", "Vercel", "Docker", "CI/CD", "Cloud Run"],
-  ai: ["LLM Integration", "Prompt Engineering", "AI/ML APIs"],
+  ai: ["LLM Integration", "RAG", "Vector Databases", "Prompt Engineering"],
 };
