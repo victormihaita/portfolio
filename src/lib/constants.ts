@@ -1,0 +1,66 @@
+export const SITE_NAME = "Victor Mihaita";
+export const SITE_TITLE = "Full Stack Developer";
+export const SITE_DESCRIPTION = "Software developer with 8 years of experience building products end-to-end. iOS, React, Go, and everything in between.";
+
+export const LINKS = {
+  linkedin: "https://www.linkedin.com/in/vmihai12/",
+  github: "https://github.com/vmihai12",
+  email: "mailto:contact@victormihaita.com",
+};
+
+export const ABOUT = {
+  intro: "Software developer with 8 years of experience. Started in iOS development, and over the past 4 years have shifted focus to full-stack work—building frontends, backends, APIs, and cloud infrastructure alongside mobile apps.",
+  focus: "I enjoy owning the full picture—from database schema to user interface—and shipping products that work well end-to-end.",
+};
+
+export const PROJECTS = [
+  {
+    id: "paste",
+    name: "Paste",
+    description: "The best clipboard manager for Mac, iPhone, and iPad. Organize and manage clipboard history across Apple devices.",
+    role: "iOS Developer",
+    url: "https://pasteapp.io",
+    tech: ["Swift", "SwiftUI", "iCloud Sync"],
+  },
+  {
+    id: "wishes",
+    name: "Wishes",
+    description: "Social wishlist app that helps people create, organize, and share gift wishlists. Shipped to 60K+ users.",
+    role: "iOS Developer",
+    url: "https://wishes.app",
+    tech: ["SwiftUI", "GraphQL", "Payments", "Chat"],
+  },
+  {
+    id: "postsam",
+    name: "PostSam",
+    description: "AI-powered social media management tool that automates content creation and scheduling across multiple platforms.",
+    role: "Full Stack Developer",
+    url: "https://postsam.ai",
+    tech: ["AI/LLM", "React", "Node.js", "Multi-platform"],
+  },
+  {
+    id: "helpfred",
+    name: "HelpFred",
+    description: "AI customer support agent that automatically handles emails by learning from your knowledge base and communication style.",
+    role: "Full Stack Developer",
+    url: "https://helpfred.ai",
+    tech: ["AI/ML", "Gmail API", "React", "SaaS"],
+  },
+  {
+    id: "artland",
+    name: "Artland",
+    description: "Global digital marketplace connecting galleries with art collectors. Making contemporary art more accessible worldwide.",
+    role: "Senior iOS + Backend Developer",
+    url: "https://thehub.io/startups/artland",
+    tech: ["Swift", "Go", "GraphQL", "PostgreSQL"],
+  },
+];
+
+export const SKILLS = {
+  mobile: ["Swift", "SwiftUI", "UIKit", "Combine", "Core Data"],
+  frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+  backend: ["Go", "GraphQL", "REST APIs", "Node.js"],
+  database: ["PostgreSQL", "SQLite", "Core Data"],
+  cloud: ["Google Cloud Platform", "Docker", "CI/CD", "Cloud Run"],
+  ai: ["LLM Integration", "Prompt Engineering", "AI/ML APIs"],
+};
