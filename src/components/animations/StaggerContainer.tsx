@@ -6,10 +6,9 @@ import { motion, useInView } from "framer-motion";
 interface StaggerContainerProps {
   children: React.ReactNode;
   className?: string;
-  staggerDelay?: number;
 }
 
-export function StaggerContainer({ children, className = "", staggerDelay = 0.1 }: StaggerContainerProps) {
+export function StaggerContainer({ children, className = "" }: StaggerContainerProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -22,8 +21,7 @@ export function StaggerContainer({ children, className = "", staggerDelay = 0.1 
         hidden: {},
         visible: {
           transition: {
-            staggerChildren: staggerDelay,
-            delayChildren: 0.1,
+            staggerChildren: 0.1,
           },
         },
       }}
@@ -34,12 +32,22 @@ export function StaggerContainer({ children, className = "", staggerDelay = 0.1 
   );
 }
 
-export function StaggerItem({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+export function StaggerItem({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
     <motion.div
       variants={{
         hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.5, ease: "easeOut" },
+        },
       }}
       className={className}
     >

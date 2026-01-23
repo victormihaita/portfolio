@@ -4,8 +4,8 @@ export const SITE_DESCRIPTION = "Software developer with 8 years of experience b
 
 export const LINKS = {
   linkedin: "https://www.linkedin.com/in/vmihai12/",
-  github: "https://github.com/vmihai12",
-  email: "mailto:contact@victormihaita.com",
+  github: "https://github.com/victormihaita",
+  email: "mailto:vmihai12@icloud.com",
 };
 
 export const ABOUT = {
@@ -60,7 +60,7 @@ export const SKILLS = {
   mobile: ["Swift", "SwiftUI", "UIKit", "Combine", "Core Data"],
   frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
   backend: ["Go", "GraphQL", "REST APIs", "Node.js"],
-  database: ["PostgreSQL", "SQLite", "Core Data"],
-  cloud: ["Google Cloud Platform", "Docker", "CI/CD", "Cloud Run"],
+  database: ["PostgreSQL", "Neon", "SQLite", "Core Data"],
+  cloud: ["Google Cloud Platform", "Vercel", "Docker", "CI/CD", "Cloud Run"],
   ai: ["LLM Integration", "Prompt Engineering", "AI/ML APIs"],
 };

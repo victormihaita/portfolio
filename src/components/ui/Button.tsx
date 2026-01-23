@@ -23,8 +23,8 @@ export function Button({
 
   const variants = {
     primary: "gradient-primary text-white hover:opacity-90 hover:scale-[1.02]",
-    secondary: "bg-white/10 text-white hover:bg-white/20",
-    outline: "border border-white/20 text-white hover:bg-white/10",
+    secondary: "bg-[var(--overlay-light)] text-[var(--foreground)] hover:bg-[var(--overlay-medium)]",
+    outline: "border border-[var(--glass-border)] text-[var(--foreground)] hover:bg-[var(--overlay-light)]",
   };
 
   const sizes = {

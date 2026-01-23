@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { SITE_NAME } from "@/lib/constants";
 
@@ -21,7 +20,7 @@ export function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -32,11 +31,13 @@ export function Header() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2 group">
           <div className="w-8 h-8 rounded-lg gradient-primary flex items-center justify-center">
             <span className="text-white font-bold text-sm">VM</span>
           </div>
-          <span className="font-semibold text-lg hidden sm:block">{SITE_NAME}</span>
+          <span className="font-semibold text-lg hidden sm:block">
+            {SITE_NAME}
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -45,7 +46,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-[var(--foreground-secondary)] hover:text-white transition-colors text-sm"
+              className="text-[var(--foreground-secondary)] hover:text-[var(--foreground)] transition-colors text-sm"
             >
               {link.label}
             </Link>
@@ -55,7 +56,7 @@ export function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2 text-[var(--foreground-secondary)] hover:text-white"
+          className="md:hidden p-2 text-[var(--foreground-secondary)] hover:text-[var(--foreground)]"
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -64,25 +65,20 @@ export function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          className="md:hidden glass border-t border-white/10"
-        >
+        <div className="md:hidden glass border-t border-[var(--glass-border)]">
           <div className="px-6 py-4 flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-[var(--foreground-secondary)] hover:text-white transition-colors"
+                className="text-[var(--foreground-secondary)] hover:text-[var(--foreground)] transition-colors py-2"
               >
                 {link.label}
               </Link>
             ))}
           </div>
-        </motion.div>
+        </div>
       )}
     </header>
   );

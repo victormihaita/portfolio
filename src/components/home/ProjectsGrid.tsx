@@ -46,7 +46,7 @@ export function ProjectsGrid() {
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 text-xs rounded-md bg-white/5 text-[var(--foreground-tertiary)]"
+                        className="px-2 py-1 text-xs rounded-md bg-[var(--overlay-subtle)] text-[var(--foreground-tertiary)]"
                       >
                         {tech}
                       </span>

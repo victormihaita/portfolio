@@ -2,6 +2,7 @@
 
 :root {
   /* Portfolio Theme - Professional Blue */
+  /* Dark mode (default) */
 
   /* Backgrounds - True black for OLED/cinematic feel */
   --background: #000000;
@@ -33,6 +34,54 @@
   --accent-start: #3b82f6;
   --accent-mid: #8b5cf6;
   --accent-end: #ec4899;
+
+  /* Glass effect colors */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-card-start: rgba(255, 255, 255, 0.1);
+  --glass-card-end: rgba(255, 255, 255, 0.05);
+
+  /* Overlay colors for buttons/tags */
+  --overlay-subtle: rgba(255, 255, 255, 0.05);
+  --overlay-light: rgba(255, 255, 255, 0.1);
+  --overlay-medium: rgba(255, 255, 255, 0.2);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Light mode */
+
+    /* Backgrounds */
+    --background: #ffffff;
+    --background-elevated: #f8fafc;
+    --background-surface: #f1f5f9;
+    --background-card: #e2e8f0;
+
+    /* Foreground */
+    --foreground: #0f172a;
+    --foreground-secondary: #475569;
+    --foreground-tertiary: #94a3b8;
+
+    /* Primary - Professional Blue (slightly darker for light mode) */
+    --primary: #2563eb;
+    --primary-hover: #3b82f6;
+    --primary-dark: #1d4ed8;
+
+    /* Secondary - Slate */
+    --secondary: #64748b;
+    --secondary-hover: #475569;
+
+    /* Glass effect colors for light mode */
+    --glass-bg: rgba(0, 0, 0, 0.03);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --glass-card-start: rgba(0, 0, 0, 0.02);
+    --glass-card-end: rgba(0, 0, 0, 0.05);
+
+    /* Overlay colors for buttons/tags */
+    --overlay-subtle: rgba(0, 0, 0, 0.05);
+    --overlay-light: rgba(0, 0, 0, 0.1);
+    --overlay-medium: rgba(0, 0, 0, 0.15);
+  }
 }
 
 @theme inline {
@@ -73,21 +122,21 @@ body {
 
 /* Glass effect */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
 }
 
 .glass-card {
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.05) 100%
+    var(--glass-card-start) 0%,
+    var(--glass-card-end) 100%
   );
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
 }
 
 /* Accent gradient - Blue to Purple to Pink */
@@ -107,21 +156,32 @@ body {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
 }
 
-/* Hero gradient */
-.gradient-hero {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-mid) 100%);
+/* Improved focus states */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
-/* Subtle glow effect - Blue */
-.glow-primary {
-  box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
+/* Selection styling */
+::selection {
+  background: var(--primary);
+  color: white;
 }
 
-.glow-accent {
-  box-shadow: 0 0 40px rgba(139, 92, 246, 0.4);
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-/* Secondary glow */
-.glow-secondary {
-  box-shadow: 0 0 40px rgba(100, 116, 139, 0.3);
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--foreground-tertiary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground-secondary);
 }
