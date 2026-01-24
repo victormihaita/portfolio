@@ -10,7 +10,9 @@ export const LINKS = {
 
 export const ABOUT = {
   intro: "Software developer with 8 years of experience. Started in iOS development, and over the past 4 years have shifted focus to full-stack work—building frontends, backends, APIs, and cloud infrastructure alongside mobile apps.",
+  stack: "Currently working with Swift/SwiftUI on iOS, React and Next.js for web, Go and GraphQL for backend services, PostgreSQL for data, and GCP for infrastructure. Also have hands-on experience with AI/ML integration and relational database design.",
   focus: "I enjoy owning the full picture—from database schema to user interface—and shipping products that work well end-to-end.",
+  topSkills: ["iOS Development", "Back-End Web Development", "Front-End Development", "Relational Databases", "End-to-end Ownership"],
 };
 
 export const PROJECTS = [
