@@ -20,42 +20,65 @@ export function ProjectsGrid() {
         </FadeIn>
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PROJECTS.map((project) => (
-            <StaggerItem key={project.id}>
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block h-full"
-              >
-                <Card className="h-full flex flex-col">
-                  <div className="flex items-start justify-between mb-4">
+          {PROJECTS.map((project) => {
+            const content = (
+              <Card className="h-full flex flex-col" hover={!!project.url}>
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center gap-2">
                     <h3 className="text-xl font-semibold">{project.name}</h3>
-                    <ExternalLink size={18} className="text-[var(--foreground-tertiary)] flex-shrink-0" />
-                  </div>
-
-                  <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[var(--primary)]/20 text-[var(--primary-hover)] mb-4 w-fit">
-                    {project.role}
-                  </span>
-
-                  <p className="text-[var(--foreground-secondary)] text-sm leading-relaxed mb-4 flex-grow">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {project.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 text-xs rounded-md bg-[var(--overlay-subtle)] text-[var(--foreground-tertiary)]"
-                      >
-                        {tech}
+                    {project.wip && (
+                      <span className="px-2 py-0.5 text-[10px] font-semibold uppercase rounded bg-amber-500/20 text-amber-400">
+                        WIP
                       </span>
-                    ))}
+                    )}
                   </div>
-                </Card>
-              </a>
-            </StaggerItem>
-          ))}
+                  {project.url && (
+                    <ExternalLink size={18} className="text-[var(--foreground-tertiary)] flex-shrink-0" />
+                  )}
+                </div>
+
+                <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[var(--primary)]/20 text-[var(--primary-hover)] mb-4 w-fit">
+                  {project.role}
+                </span>
+
+                <p className="text-[var(--foreground-secondary)] text-sm leading-relaxed mb-4 flex-grow">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {project.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2 py-1 text-xs rounded-md bg-[var(--overlay-subtle)] text-[var(--foreground-tertiary)]"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </Card>
+            );
+
+            if (project.url) {
+              return (
+                <StaggerItem key={project.id}>
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block h-full"
+                  >
+                    {content}
+                  </a>
+                </StaggerItem>
+              );
+            }
+
+            return (
+              <StaggerItem key={project.id}>
+                <div className="h-full">{content}</div>
+              </StaggerItem>
+            );
+          })}
         </StaggerContainer>
       </div>
     </section>

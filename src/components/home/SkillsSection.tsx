@@ -3,7 +3,7 @@
 import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { SKILLS } from "@/lib/constants";
-import { Smartphone, Globe, Server, Database, Cloud, Bot } from "lucide-react";
+import { Smartphone, Globe, Server, Database, Cloud, Bot, FlaskConical } from "lucide-react";
 
 const skillCategories = [
   { key: "mobile" as const, label: "Mobile", icon: Smartphone },
@@ -12,6 +12,7 @@ const skillCategories = [
   { key: "database" as const, label: "Database", icon: Database },
   { key: "cloud" as const, label: "Cloud", icon: Cloud },
   { key: "ai" as const, label: "AI/ML", icon: Bot },
+  { key: "qa" as const, label: "QA & Testing", icon: FlaskConical },
 ];
 
 export function SkillsSection() {
