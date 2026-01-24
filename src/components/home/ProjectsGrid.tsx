@@ -1,8 +1,11 @@
 "use client";
 
 import { FadeIn } from "@/components/animations/FadeIn";
-import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
-import { Card } from "@/components/ui/Card";
+import {
+  StaggerContainer,
+  ScaleStaggerItem,
+} from "@/components/animations/StaggerContainer";
+import { InteractiveCard } from "@/components/ui/Card";
 import { PROJECTS } from "@/lib/constants";
 import { ExternalLink } from "lucide-react";
 
@@ -20,9 +23,12 @@ export function ProjectsGrid() {
         </FadeIn>
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PROJECTS.map((project) => {
-            const content = (
-              <Card className="h-full flex flex-col" hover={!!project.url}>
+          {PROJECTS.map((project) => (
+            <ScaleStaggerItem key={project.id}>
+              <InteractiveCard
+                href={project.url}
+                className="h-full flex flex-col"
+              >
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-2">
                     <h3 className="text-xl font-semibold">{project.name}</h3>
@@ -33,7 +39,10 @@ export function ProjectsGrid() {
                     )}
                   </div>
                   {project.url && (
-                    <ExternalLink size={18} className="text-[var(--foreground-tertiary)] flex-shrink-0" />
+                    <ExternalLink
+                      size={18}
+                      className="text-[var(--foreground-tertiary)] flex-shrink-0 group-hover:text-[var(--primary)] transition-colors"
+                    />
                   )}
                 </div>
 
@@ -49,36 +58,15 @@ export function ProjectsGrid() {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-1 text-xs rounded-md bg-[var(--overlay-subtle)] text-[var(--foreground-tertiary)]"
+                      className="px-2 py-1 text-xs rounded-lg bg-[var(--overlay-subtle)] text-[var(--foreground-tertiary)] border border-[var(--glass-border)]"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-              </Card>
-            );
-
-            if (project.url) {
-              return (
-                <StaggerItem key={project.id}>
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block h-full"
-                  >
-                    {content}
-                  </a>
-                </StaggerItem>
-              );
-            }
-
-            return (
-              <StaggerItem key={project.id}>
-                <div className="h-full">{content}</div>
-              </StaggerItem>
-            );
-          })}
+              </InteractiveCard>
+            </ScaleStaggerItem>
+          ))}
         </StaggerContainer>
       </div>
     </section>

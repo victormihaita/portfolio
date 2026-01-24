@@ -17,7 +17,8 @@ export function CTASection() {
 
         <FadeIn delay={0.1}>
           <p className="text-lg text-[var(--foreground-secondary)] mb-8 max-w-xl mx-auto">
-            Currently open to new opportunities. Feel free to reach out if you&apos;d like to discuss a project or just say hello.
+            Currently open to new opportunities. Feel free to reach out if
+            you&apos;d like to discuss a project or just say hello.
           </p>
         </FadeIn>
 

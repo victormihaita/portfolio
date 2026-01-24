@@ -57,20 +57,20 @@ export const PROJECTS = [
     tech: ["Swift", "Go", "GraphQL", "PostgreSQL"],
   },
   {
-    id: "cleanbuddy",
-    name: "CleanBuddy",
-    description: "Two-sided marketplace connecting customers with verified cleaning professionals. Features real-time booking, dynamic pricing, integrated payments, and automated e-invoicing.",
-    role: "Full Stack Developer",
-    tech: ["Go", "GraphQL", "PostgreSQL", "Next.js", "Stripe", "WebSockets"],
-    wip: true,
-  },
-  {
     id: "power-reminders",
     name: "Power Reminders",
     description: "Cross-platform reminders app with real-time sync across iOS and Android. Features custom snooze intervals, advanced recurring schedules, and offline-first architecture.",
     role: "Full Stack Developer",
     url: "https://testflight.apple.com/join/sP26qcm7",
     tech: ["Go", "GraphQL", "Swift", "Kotlin", "Next.js"],
+  },
+  {
+    id: "cleanbuddy",
+    name: "CleanBuddy",
+    description: "Two-sided marketplace connecting customers with verified cleaning professionals. Features real-time booking, dynamic pricing, integrated payments, and automated e-invoicing.",
+    role: "Full Stack Developer",
+    tech: ["Go", "GraphQL", "PostgreSQL", "Next.js", "Stripe", "WebSockets"],
+    wip: true,
   },
 ];
 

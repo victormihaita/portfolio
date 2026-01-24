@@ -1,9 +1,22 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
+import {
+  StaggerContainer,
+  ScaleStaggerItem,
+} from "@/components/animations/StaggerContainer";
+import { Card } from "@/components/ui/Card";
 import { SKILLS } from "@/lib/constants";
-import { Smartphone, Globe, Server, Database, Cloud, Bot, FlaskConical } from "lucide-react";
+import {
+  Smartphone,
+  Globe,
+  Server,
+  Database,
+  Cloud,
+  Bot,
+  FlaskConical,
+} from "lucide-react";
 
 const skillCategories = [
   { key: "mobile" as const, label: "Mobile", icon: Smartphone },
@@ -32,26 +45,39 @@ export function SkillsSection() {
           {skillCategories.map((category) => {
             const Icon = category.icon;
             return (
-              <StaggerItem key={category.key}>
-                <div className="glass-card rounded-2xl p-6">
+              <ScaleStaggerItem key={category.key}>
+                <Card className="h-full">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center">
+                    <motion.div
+                      className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center"
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                    >
                       <Icon size={20} className="text-white" />
-                    </div>
+                    </motion.div>
                     <h3 className="text-lg font-semibold">{category.label}</h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {SKILLS[category.key].map((skill) => (
-                      <span
+                    {SKILLS[category.key].map((skill, index) => (
+                      <motion.span
                         key={skill}
-                        className="px-3 py-1.5 text-sm rounded-full bg-[var(--overlay-subtle)] text-[var(--foreground-secondary)] border border-[var(--glass-border)]"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{
+                          duration: 0.2,
+                          delay: index * 0.03,
+                          ease: [0.16, 1, 0.3, 1],
+                        }}
+                        viewport={{ once: true }}
+                        whileHover={{ scale: 1.05 }}
+                        className="px-3 py-1.5 text-sm rounded-full bg-[var(--overlay-subtle)] text-[var(--foreground-secondary)] border border-[var(--glass-border)] cursor-default transition-colors hover:border-[var(--primary)]/30 hover:bg-[var(--primary)]/5"
                       >
                         {skill}
-                      </span>
+                      </motion.span>
                     ))}
                   </div>
-                </div>
-              </StaggerItem>
+                </Card>
+              </ScaleStaggerItem>
             );
           })}
         </StaggerContainer>
