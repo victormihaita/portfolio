@@ -24,7 +24,7 @@ export function ProjectsGrid() {
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PROJECTS.map((project) => (
-            <ScaleStaggerItem key={project.id}>
+            <ScaleStaggerItem key={project.id} className="h-full">
               <InteractiveCard
                 href={project.url}
                 className="h-full flex flex-col"

@@ -60,7 +60,7 @@ export function InteractiveCard({
 
   if (href) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className="block">
+      <a href={href} target="_blank" rel="noopener noreferrer" className="block h-full">
         {content}
       </a>
     );
