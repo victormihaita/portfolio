@@ -15,7 +15,6 @@ import {
   Database,
   Cloud,
   Bot,
-  FlaskConical,
 } from "lucide-react";
 
 const skillCategories = [
@@ -25,7 +24,6 @@ const skillCategories = [
   { key: "database" as const, label: "Database", icon: Database },
   { key: "cloud" as const, label: "Cloud", icon: Cloud },
   { key: "ai" as const, label: "AI/ML", icon: Bot },
-  { key: "qa" as const, label: "QA & Testing", icon: FlaskConical },
 ];
 
 export function SkillsSection() {

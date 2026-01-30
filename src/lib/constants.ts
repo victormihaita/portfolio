@@ -57,11 +57,11 @@ export const PROJECTS = [
     tech: ["Swift", "Go", "GraphQL", "PostgreSQL"],
   },
   {
-    id: "power-reminders",
-    name: "Power Reminders",
+    id: "zalt",
+    name: "Zalt",
     description: "Cross-platform reminders app with real-time sync across iOS and Android. Features custom snooze intervals, advanced recurring schedules, and offline-first architecture.",
     role: "Full Stack Developer",
-    url: "https://testflight.apple.com/join/sP26qcm7",
+    url: "https://jolt-website-liart.vercel.app",
     tech: ["Go", "GraphQL", "Swift", "Kotlin", "Next.js"],
   },
   {
@@ -81,5 +81,4 @@ export const SKILLS = {
   database: ["PostgreSQL", "Neon", "SQLite", "Core Data"],
   cloud: ["Google Cloud Platform", "Vercel", "Docker", "CI/CD", "Cloud Run"],
   ai: ["LLM Integration", "RAG", "Vector Databases", "Prompt Engineering"],
-  qa: ["Unit Testing", "Integration Testing", "XCTest", "Playwright", "E2E Testing"],
 };
