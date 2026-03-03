@@ -21,7 +21,7 @@ export const PROJECTS = [
     name: "Go2Fix",
     description: "Romania's first home services marketplace — an investor-ready MVP that formalizes the informal services sector through compliance, trust, and technology. Starting with cleaning, expanding to all home services.",
     role: "Full Stack Developer",
-    url: "https://go2fix.ro",
+    url: "https://www.go2fix.ro",
     tech: ["Go", "GraphQL", "PostgreSQL", "Next.js", "Stripe", "WebSockets"],
     wip: true,
   },
