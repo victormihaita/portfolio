@@ -1,6 +1,7 @@
 export const SITE_NAME = "Victor Mihaita";
 export const SITE_TITLE = "Full Stack Developer";
 export const SITE_DESCRIPTION = "Software developer with 8 years of experience building products end-to-end. iOS, React, Go, and everything in between.";
+export const SITE_URL = "https://portfolio.victormihaita.dev";
 
 export const LINKS = {
   linkedin: "https://www.linkedin.com/in/vmihai12/",
