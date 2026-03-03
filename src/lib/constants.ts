@@ -17,6 +17,15 @@ export const ABOUT = {
 
 export const PROJECTS = [
   {
+    id: "go2fix",
+    name: "Go2Fix",
+    description: "Romania's first home services marketplace — an investor-ready MVP that formalizes the informal services sector through compliance, trust, and technology. Starting with cleaning, expanding to all home services.",
+    role: "Full Stack Developer",
+    url: "https://go2fix.ro",
+    tech: ["Go", "GraphQL", "PostgreSQL", "Next.js", "Stripe", "WebSockets"],
+    wip: true,
+  },
+  {
     id: "paste",
     name: "Paste",
     description: "The best clipboard manager for Mac, iPhone, and iPad. Organize and manage clipboard history across Apple devices.",
@@ -63,14 +72,6 @@ export const PROJECTS = [
     role: "Full Stack Developer",
     url: "https://jolt-website-liart.vercel.app",
     tech: ["Go", "GraphQL", "Swift", "Kotlin", "Next.js"],
-  },
-  {
-    id: "cleanbuddy",
-    name: "CleanBuddy",
-    description: "Two-sided marketplace connecting customers with verified cleaning professionals. Features real-time booking, dynamic pricing, integrated payments, and automated e-invoicing.",
-    role: "Full Stack Developer",
-    tech: ["Go", "GraphQL", "PostgreSQL", "Next.js", "Stripe", "WebSockets"],
-    wip: true,
   },
 ];
 
