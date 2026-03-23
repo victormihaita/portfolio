@@ -32,9 +32,9 @@ export function ProjectsGrid() {
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-2">
                     <h3 className="text-xl font-semibold">{project.name}</h3>
-                    {project.wip && (
+                    {project.badge && (
                       <span className="px-2 py-0.5 text-[10px] font-semibold uppercase rounded bg-amber-500/20 text-amber-400">
-                        WIP
+                        {project.badge}
                       </span>
                     )}
                   </div>

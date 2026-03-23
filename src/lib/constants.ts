@@ -24,7 +24,15 @@ export const PROJECTS = [
     role: "Full Stack Developer",
     url: "https://www.go2fix.ro",
     tech: ["Go", "GraphQL", "PostgreSQL", "Next.js", "Stripe", "WebSockets"],
-    wip: true,
+    badge: "MVP",
+  },
+  {
+    id: "idle-civilizations",
+    name: "Idle Civilizations",
+    description: "Idle game for history enthusiasts. Start with a campfire in the Stone Age and progress through 8 historical eras to the Space Age. Features offline progression, prestige mechanics, weekly events, and 40 unique buildings.",
+    role: "iOS Developer",
+    url: "https://idle-studio-639p.vercel.app/games/idle-civilizations/",
+    tech: ["Swift", "SwiftUI", "Game Design"],
   },
   {
     id: "paste",
@@ -67,20 +75,13 @@ export const PROJECTS = [
     tech: ["Swift", "Go", "GraphQL", "PostgreSQL"],
   },
   {
-    id: "idle-civilizations",
-    name: "Idle Civilizations",
-    description: "Idle game for history enthusiasts. Start with a campfire in the Stone Age and progress through 8 historical eras to the Space Age. Features offline progression, prestige mechanics, weekly events, and 40 unique buildings.",
-    role: "iOS Developer",
-    url: "https://idle-studio-639p.vercel.app/games/idle-civilizations/",
-    tech: ["Swift", "SwiftUI", "Game Design"],
-  },
-  {
     id: "zalt",
     name: "Zalt",
     description: "Cross-platform reminders app with real-time sync across iOS and Android. Features custom snooze intervals, advanced recurring schedules, and offline-first architecture.",
     role: "Full Stack Developer",
     url: "https://jolt-website-liart.vercel.app",
     tech: ["Go", "GraphQL", "Swift", "Kotlin", "Next.js"],
+    badge: "In Progress",
   },
 ];
 
