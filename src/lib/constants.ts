@@ -31,7 +31,7 @@ export const PROJECTS = [
     name: "Idle Civilizations",
     description: "Idle game for history enthusiasts. Start with a campfire in the Stone Age and progress through 8 historical eras to the Space Age. Features offline progression, prestige mechanics, weekly events, and 40 unique buildings.",
     role: "iOS Developer",
-    url: "https://idle-studio-639p.vercel.app/games/idle-civilizations/",
+    url: "https://idle-studio.vercel.app/games/idle-civilizations/",
     tech: ["Swift", "SwiftUI", "Game Design"],
   },
   {
